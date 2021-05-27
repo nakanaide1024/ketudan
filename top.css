@@ -66,14 +66,14 @@
   padding       : 21px 94px;   
   background    : #000066;     
   color         : #ffffff;     
-  line-height   : 1em;         /* 1行の高さ  */
-  transition    : .3s;         /* なめらか変化 */
-  border        : 2px solid #000066;    /* 枠の指定 */
+  line-height   : 1em;         
+  transition    : .3s;         
+  border        : 2px solid #000066;    
 }
 .button:hover {
-  box-shadow    : none;        /* カーソル時の影消去 */
-  color         : #000066;     /* 背景色     */
-  background    : #ffffff;     /* 文字色     */
+  box-shadow    : none;        
+  color         : #000066;     
+  background    : #ffffff;     
 }
 
 
