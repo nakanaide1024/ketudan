@@ -70,6 +70,7 @@
   transition    : .3s;         
   border        : 2px solid #000066;    
 }
+
 .button:hover {
   box-shadow    : none;        
   color         : #000066;     
