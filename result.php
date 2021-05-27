@@ -3,6 +3,7 @@
 session_start();
 require_once "classes/Decide.php";
 
+//decidedメソッドでランダムの結果を作成し受け取る
 $result = Decide::decided($_POST);
 
 
