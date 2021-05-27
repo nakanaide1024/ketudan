@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+require_once "classes/Decide.php";
+
+$result = Decide::decided($_POST);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
