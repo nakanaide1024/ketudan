@@ -13,6 +13,13 @@ if (!isset($_SESSION['csrf_token'])|| $token !== $_SESSION['csrf_token']){
 
 unset($_SESSION['csrf_token']);
 
+//バリデーション
+if(!filter_input(INPUT_POST,'a') || !filter_input(INPUT_POST,'b')){
+  $_SESSION = ('err' => '選択肢を決めかねているのか？');
+  header('location: top.php');
+  return;
+}
+
 //decidedメソッドでランダムの結果を作成し受け取る
 $result = Decide::decided($_POST);
 
