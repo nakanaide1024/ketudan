@@ -28,6 +28,8 @@ $result = Decide::decided($_POST);
 $words = new Words;
 $word = $words->sendWord();
 
+session_destroy();
+
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +38,7 @@ $word = $words->sendWord();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="result.css">
+  <link rel="stylesheet" href="result.css?v=2">
   <title>決断</title>
 </head>
 <body>
@@ -55,8 +57,7 @@ $word = $words->sendWord();
       </div>
       <div class="word">
         <?php foreach($word as $key => $value) :?>
-        <p><?php echo $value; ?></p>
-        <p><?php echo $key; ?></p>
+        <p><?php echo $value. '<br>'. '<br>'. $key ?></p>
         <?php endforeach; ?>
       </div>
     </div>
