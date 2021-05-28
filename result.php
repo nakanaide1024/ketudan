@@ -15,7 +15,7 @@ unset($_SESSION['csrf_token']);
 
 //バリデーション
 if(!filter_input(INPUT_POST,'a') || !filter_input(INPUT_POST,'b')){
-  $_SESSION = ('err' => '選択肢を決めかねているのか？');
+  $_SESSION = array('err' => '選択肢を決めかねているのか？');
   header('location: top.php');
   return;
 }
