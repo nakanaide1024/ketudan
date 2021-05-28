@@ -48,6 +48,12 @@ p{
   align-items: center;
 }
 
+h3{
+  text-align: center;
+  font-size: larger;
+  color: burlywood;
+}
+
 .word p{
   font-size: x-large;
   color: burlywood;

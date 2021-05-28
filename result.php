@@ -55,6 +55,7 @@ session_destroy();
       <div class="result">
         <p><?php echo $result ?></p>
       </div>
+      <h3>〜悩める君へ贈る言葉〜</h3>
       <div class="word">
         <?php foreach($word as $key => $value) :?>
         <p><?php echo $value. '<br>'. '<br>'. $key ?></p>
