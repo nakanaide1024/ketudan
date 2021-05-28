@@ -30,7 +30,7 @@ $result = Decide::decided($_POST);
         </div>
       </div>
       <div class="result">
-        <p>結果</p>
+        <p><?php echo $result ?></p>
       </div>
       <div class="word">
         <p>名言</p>
