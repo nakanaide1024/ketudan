@@ -2,6 +2,10 @@
 session_start();
 require_once "functions.php";
 
+$err = $_SESSION['err'];
+
+unset($_SESSION['err']);
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -20,7 +24,11 @@ require_once "functions.php";
     <div class="content">
       <div class="message">
         <div class="q">
+          <?php if(!isset($err)) : ?>
           <p>何をそんなに悩んでいるんだ？</p>
+          <?php else : ?>
+          <p><?php echo $err?></p>
+          <?php endif; ?>
         </div>
       </div>
       <div class="form">
