@@ -3,6 +3,16 @@
 session_start();
 require_once "classes/Decide.php";
 
+//不正アクセスのチェック
+$token = filter_input(INPUT_POST, 'csrf_token');
+//トークンがない、もしくは一致しない場合、処理を中止
+if (!isset($_SESSION['csrf_token'])|| $token !== $_SESSION['csrf_token']){
+  header('location: top.php');
+  return;
+}
+
+unset($_SESSION['csrf_token']);
+
 //decidedメソッドでランダムの結果を作成し受け取る
 $result = Decide::decided($_POST);
 
