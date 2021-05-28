@@ -2,6 +2,7 @@
 
 session_start();
 require_once "classes/Decide.php";
+require_once "word.php";
 
 //不正アクセスのチェック
 $token = filter_input(INPUT_POST, 'csrf_token');
@@ -23,6 +24,9 @@ if(!filter_input(INPUT_POST,'a') || !filter_input(INPUT_POST,'b')){
 //decidedメソッドでランダムの結果を作成し受け取る
 $result = Decide::decided($_POST);
 
+//送る言葉を取得
+$words = new Words;
+$word = $words->sendWord();
 
 ?>
 
@@ -50,7 +54,10 @@ $result = Decide::decided($_POST);
         <p><?php echo $result ?></p>
       </div>
       <div class="word">
-        <p>名言</p>
+        <?php foreach($word as $key => $value) :?>
+        <p><?php echo $value; ?></p>
+        <p><?php echo $key; ?></p>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>
