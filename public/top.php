@@ -6,6 +6,7 @@ $err = $_SESSION['err'];
 
 unset($_SESSION['err']);
 
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
