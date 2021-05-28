@@ -1,3 +1,8 @@
+<?php
+session_start();
+require_once "functions.php";
+
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -29,6 +34,7 @@
         <div class="b">
           <input type="text" name="b" value="" class="text">
         </div>
+        <input type="hidden" name="csrf_token" value="<?php echo h(setToken()); ?>">
       </div>
       <div class="submit">
         <input type="submit" value="決断せよ" class="button">

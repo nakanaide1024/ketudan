@@ -6,7 +6,7 @@ class Decide{
    * @param array $content
    * @return string $result
    */
-  public static function decide($content){
+  public static function decided($content){
     
     //ランダムの数値を決める
     $num = rand(1,100);

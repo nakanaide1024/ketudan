@@ -1,3 +1,24 @@
+<?php
+
+session_start();
+require_once "classes/Decide.php";
+
+//不正アクセスのチェック
+$token = filter_input(INPUT_POST, 'csrf_token');
+//トークンがない、もしくは一致しない場合、処理を中止
+if (!isset($_SESSION['csrf_token'])|| $token !== $_SESSION['csrf_token']){
+  header('location: top.php');
+  return;
+}
+
+unset($_SESSION['csrf_token']);
+
+//decidedメソッドでランダムの結果を作成し受け取る
+$result = Decide::decided($_POST);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -19,7 +40,7 @@
         </div>
       </div>
       <div class="result">
-        <p>結果</p>
+        <p><?php echo $result ?></p>
       </div>
       <div class="word">
         <p>名言</p>
