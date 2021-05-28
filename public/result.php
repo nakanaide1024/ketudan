@@ -49,7 +49,7 @@ session_destroy();
     <div class="content">
       <div class="message">
         <div class="q">
-          <p>君がいますべきなのは</p>
+          <p>君が下すべき決断は</p>
         </div>
       </div>
       <div class="result">
