@@ -61,6 +61,9 @@ session_destroy();
         <p><?php echo $value. '<br>'. '<br>'. $key ?></p>
         <?php endforeach; ?>
       </div>
+      <div class="return">
+        <a href="top.php">もう一回悩む</a>
+      </div>
     </div>
   </div>
   <div class="footer">
