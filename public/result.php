@@ -1,7 +1,8 @@
 <?php
 
 session_start();
-require_once "classes/Decide.php";
+require_once "../classes/Decide.php";
+require_once "../word.php";
 
 //不正アクセスのチェック
 $token = filter_input(INPUT_POST, 'csrf_token');
@@ -23,6 +24,11 @@ if(!filter_input(INPUT_POST,'a') || !filter_input(INPUT_POST,'b')){
 //decidedメソッドでランダムの結果を作成し受け取る
 $result = Decide::decided($_POST);
 
+//送る言葉を取得
+$words = new Words;
+$word = $words->sendWord();
+
+session_destroy();
 
 ?>
 
@@ -32,7 +38,7 @@ $result = Decide::decided($_POST);
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="result.css">
+  <link rel="stylesheet" href="result.css?v=2">
   <title>決断</title>
 </head>
 <body>
@@ -43,14 +49,20 @@ $result = Decide::decided($_POST);
     <div class="content">
       <div class="message">
         <div class="q">
-          <p>君がいますべきなのは</p>
+          <p>君が下すべき決断は</p>
         </div>
       </div>
       <div class="result">
         <p><?php echo $result ?></p>
       </div>
+      <h3>〜悩める君へ贈る言葉〜</h3>
       <div class="word">
-        <p>名言</p>
+        <?php foreach($word as $key => $value) :?>
+        <p><?php echo $value. '<br>'. '<br>'. $key ?></p>
+        <?php endforeach; ?>
+      </div>
+      <div class="return">
+        <a href="top.php">もう一回悩む</a>
       </div>
     </div>
   </div>
