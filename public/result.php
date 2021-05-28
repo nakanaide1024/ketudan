@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-require_once "classes/Decide.php";
-require_once "word.php";
+require_once "../classes/Decide.php";
+require_once "../word.php";
 
 //不正アクセスのチェック
 $token = filter_input(INPUT_POST, 'csrf_token');
