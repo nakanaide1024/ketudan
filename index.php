@@ -1,3 +1,3 @@
 <?php
 
-header('location: top.php');
+header('location: /public/top.php');
