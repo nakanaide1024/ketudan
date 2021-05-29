@@ -3,6 +3,7 @@
 # アプリケーションの概要
 
 ■アプリURL<br>
+https://ketudan.herokuapp.com/public/top.php
 
 - あなたの代わりに決断してくれるサイト
 - 基本的に二択の選択肢を入れるとそのどちらかを決めてくれる。
