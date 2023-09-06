@@ -2,9 +2,12 @@
 session_start();
 require_once "../functions.php";
 
-$err = $_SESSION['err'];
-
-unset($_SESSION['err']);
+if (isset($_SESSION['err'])) {
+  $err = $_SESSION['err'];
+  unset($_SESSION['err']);
+} else {
+  $err = null;
+}
 
 
 ?>
